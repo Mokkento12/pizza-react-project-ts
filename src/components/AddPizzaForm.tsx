@@ -19,6 +19,7 @@ const AddPizzaForm = () => {
     console.log("handle change >>", e.target);
   };
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     console.log("handle change >>", e.target);
   };
 
