@@ -17,6 +17,12 @@ const App: React.FC = () => {
     );
   };
 
+  const deletePizza = (id: number) => {
+    const newPizzasList = pizzasList.filter((pizza) => pizza.id !== id);
+
+    setPizzasList(newPizzasList);
+  };
+
   console.log("pizzasList", pizzasList);
 
   return (
@@ -24,7 +30,11 @@ const App: React.FC = () => {
       <div className="wrap">
         <span className="heading">Наша пиццерия</span>
         <AddPizzaForm addPizza={addPizza} />
-        <DisplayPizzas pizzasList={pizzasList} updatePizza={updatePizza} />
+        <DisplayPizzas
+          pizzasList={pizzasList}
+          updatePizza={updatePizza}
+          deletePizza={deletePizza}
+        />
       </div>
     </div>
   );
